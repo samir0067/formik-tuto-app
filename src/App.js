@@ -61,16 +61,16 @@ function App() {
           name: Yup.string()
             .min(3, 'Doit comporter au moins 3 caractères')
             .max(20, 'Doit comporter 20 caractères ou moins')
-            .required('Required'),
+            .required('Obligatoire'),
           email: Yup.string()
             .email('Adresse email invalide')
-            .required('Required'),
+            .required('Obligatoire'),
           acceptedTerms: Yup.boolean()
             .oneOf([true], 'Vous devez accepter les termes et conditions')
-            .required('Required'),
+            .required('Obligatoire'),
           specialPower: Yup.string()
             .oneOf(['fuite', 'invisibilité', 'riche chauve-souris', 'autre'], 'Pouvoir spécial invalide')
-            .required('Required'),
+            .required('Obligatoire'),
         })}
         onSubmit={(values, {setSubmitting, resetForm}) => {
           setTimeout(() => {
