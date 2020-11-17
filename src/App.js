@@ -59,17 +59,17 @@ function App() {
         }}
         validationSchema={Yup.object({
           name: Yup.string()
-            .min(3, 'Must be at least 3 characters')
-            .max(15, 'Must be 15 characters or less')
+            .min(3, 'Doit comporter au moins 3 caractères')
+            .max(20, 'Doit comporter 20 caractères ou moins')
             .required('Required'),
           email: Yup.string()
-            .email('Invalid email address')
+            .email('Adresse email invalide')
             .required('Required'),
           acceptedTerms: Yup.boolean()
-            .oneOf([true], 'You must accept the terms and conditions')
+            .oneOf([true], 'Vous devez accepter les termes et conditions')
             .required('Required'),
           specialPower: Yup.string()
-            .oneOf(['flight', 'invisibility', 'wealthy bat guy', 'other'], 'Invalid Special Power')
+            .oneOf(['fuite', 'invisibilité', 'riche chauve-souris', 'autre'], 'Pouvoir spécial invalide')
             .required('Required'),
         })}
         onSubmit={(values, {setSubmitting, resetForm}) => {
